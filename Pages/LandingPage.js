@@ -8,7 +8,7 @@ const LandingPage = ({ navigation }) => {
         uri: 'https://i.pinimg.com/564x/62/bc/80/62bc80ae557ba83fddb7819b03874a16.jpg',
       }}
       style={styles.backgroundImage}
-      resizeMode="cover" // To cover the entire background area
+      resizeMode="cover" 
     >
       <View style={styles.overlay}>
         <View style={styles.container}>
