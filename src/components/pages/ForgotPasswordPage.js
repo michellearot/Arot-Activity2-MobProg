@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, Button, StyleSheet, ImageBackground } from 'react-native';
 
-const LoginPage = ({ navigation }) => {
+const ForgotPasswordPage = ({ navigation }) => {
   return (
     <ImageBackground
       source={{
@@ -12,41 +12,29 @@ const LoginPage = ({ navigation }) => {
     >
       <View style={styles.overlay}>
         <View style={styles.container}>
-          <Text style={styles.title}>Login Page</Text>
+          <Text style={styles.title}>Forgot Password Page</Text>
           <View style={styles.inputContainer}>
             <TextInput
               style={styles.input}
               placeholder="Enter your email"
-              placeholderTextColor="#ffffff"
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your password"
-              secureTextEntry={true}
-              placeholderTextColor="#ffffff"
+              placeholderTextColor="#999999" // Set placeholder text color to gray
             />
           </View>
           <View style={styles.buttonContainer}>
             <Button
-              title="Login"
-              onPress={() => navigation.navigate('HomePage')}
+              title="Reset Password"
+              onPress={() => navigation.navigate('ResetPassword')}
               color="#040D12" 
               style={styles.button}
             />
             <View style={styles.verticalMargin} />
             <Button
-              title="Sign Up"
-              onPress={() => navigation.navigate('SignUpPage')}
+              title="Back To Log In"
+              onPress={() => navigation.navigate('Login')}
               color="#040D12" 
               style={styles.button}
             />
             <View style={styles.verticalMargin} />
-            <Button
-              title="Forgot Password"
-              onPress={() => navigation.navigate('ForgotPasswordPage')}
-              color="#040D12" 
-              style={styles.button}
-            />
           </View>
         </View>
       </View>
@@ -86,7 +74,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 10,
     borderRadius: 5,
-    color: '#fff',
+    color: '#000', 
+    backgroundColor: '#fff', 
   },
   buttonContainer: {
     width: '65%',
@@ -99,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginPage;
+export default ForgotPasswordPage;

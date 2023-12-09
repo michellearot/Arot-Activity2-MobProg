@@ -1,29 +1,29 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet } from "react-native";
+import globalstyles from "./src/config/styles";
+import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  PaperProvider,
+  MD3LightTheme as DefaultTheme,
+} from "react-native-paper";
+import colors from "./src/config/colors";
+import NavigationStack from "./src/components/navigation/NavigationStack";
 
-import LandingPage from './Pages/LandingPage';
-import ForgotPasswordPage from './Pages/ForgotPasswordPage';
-import HomePage from './Pages/HomePage';
-import LoginPage from './Pages/LoginPage';
-import SignUpPage from './Pages/SignUpPage';
-import ResetPasswordPage from './Pages/ResetPasswordPage';
+export default function App() {
+  const theme = {
+    ...DefaultTheme,
+    colors: colors.colors,
+    mode: "exact",
+  };
 
-const Stack = createStackNavigator();
-
-const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="LandingPage" headerMode="false">
-        <Stack.Screen name="LandingPage" component={LandingPage} />
-        <Stack.Screen name="ForgotPasswordPage" component={ForgotPasswordPage} />
-        <Stack.Screen name="HomePage" component={HomePage} />
-        <Stack.Screen name="LoginPage" component={LoginPage} />
-        <Stack.Screen name="SignUpPage" component={SignUpPage} />
-        <Stack.Screen name="ResetPasswordPage" component={ResetPasswordPage} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <PaperProvider theme={theme}>
+      <SafeAreaView style={styles.container}>
+        <StatusBar style="auto" />
+        <NavigationStack />
+      </SafeAreaView>
+    </PaperProvider>
   );
-};
+}
 
-export default App;
+const styles = StyleSheet.create(globalstyles);

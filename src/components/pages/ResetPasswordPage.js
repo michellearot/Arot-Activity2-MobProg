@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, ImageBackground } from 'react-native';
 
-const LandingPage = ({ navigation }) => {
+const ResetPasswordPage = ({ navigation }) => {
   return (
     <ImageBackground
       source={{
@@ -12,20 +12,12 @@ const LandingPage = ({ navigation }) => {
     >
       <View style={styles.overlay}>
         <View style={styles.container}>
-          <Text style={styles.title}>Welcome to the Landing Page</Text>
+          <Text style={styles.title}>The Request Has Been Sent</Text>
           <View style={styles.buttonContainer}>
             <View style={styles.customButton}>
               <Button
-                title="Login"
-                onPress={() => navigation.navigate('LoginPage')}
-                color="#040D12" 
-              />
-            </View>
-            <View style={styles.verticalMargin} />
-            <View style={styles.customButton}>
-              <Button
-                title="Sign Up"
-                onPress={() => navigation.navigate('SignUpPage')}
+                title="Back To Login"
+                onPress={() => navigation.navigate('Login')}
                 color="#040D12" 
               />
             </View>
@@ -72,4 +64,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LandingPage;
+export default ResetPasswordPage;
