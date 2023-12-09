@@ -33,7 +33,7 @@ export default function LoginForm({ navigation }) {
         return false;
       }
 
-      const url = "http://192.168.55.107/api/v1/signup";
+      const url = "http://192.168.1.9/api/v1/signup";
       const data = {
         name,
         email,
