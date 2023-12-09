@@ -5,8 +5,6 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import fetchServices from "../services/fetchServices";
 
-// ... (your imports)
-
 export default function LoginForm({ navigation }) {
   const [showPass, setShowPass] = React.useState(false);
 
@@ -16,7 +14,7 @@ export default function LoginForm({ navigation }) {
 
   const handleLogin = async (values) => {
     try {
-      const url = "http://192.168.55.107/api/v1/login";
+      const url = "http://192.168.1.9/api/v1/login";
       const result = await fetchServices.postData(url, values);
 
       if (result.message != null) {
